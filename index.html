@@ -52,9 +52,9 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 .g-ov{position:relative;margin-bottom:104px}
 .g-ov .g-big{margin:0}
 .g-over{position:absolute;right:10px;bottom:-76px;width:39%;height:auto;transform:rotate(4deg);box-shadow:0 14px 26px -14px rgba(0,0,0,.45);background:var(--ph)}
-.g-solo{display:block;width:58%;height:auto;margin:0 8% 0 auto;transform:rotate(2.2deg);background:var(--ph)}
+.g-solo{display:block;width:68%;height:auto;margin:0 8% 0 auto;transform:rotate(2.2deg);background:var(--ph)}
 .g-sm{display:block;width:50%;height:auto;margin:0 auto;background:var(--ph)}
-.ed{padding:0 22px;text-align:left}
+.ed{padding:0 10px;text-align:left}
 .ed .ph{background:var(--ph)}
 .row{display:flex;gap:10px;margin-bottom:12px}
 .row .ph{flex:1;aspect-ratio:3/4}
@@ -126,6 +126,11 @@ body.wait .hero *,body.wait .hero *::before,body.wait .hero *::after{animation-p
 .share .kk{background:#fee500;border-color:#fee500;color:#191919}
 .surl{font-size:11px;color:var(--mute);word-break:break-all;margin:0 24px 28px}
 /* video items */
+
+/* polaroid */
+.film{position:relative;width:64%;margin:0 auto 56px;padding:11px 11px 40px;background:#fffefb;box-shadow:0 1px 2px rgba(0,0,0,.12),0 16px 28px -14px rgba(0,0,0,.4);transform:rotate(-2deg)}
+.film .vi{width:100%!important;margin:0!important}
+.film .vi video{aspect-ratio:3/2;border-radius:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
 .vi{width:66.7%;margin:0 auto 34px}
 .vi video{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--ph);border-radius:2px;cursor:pointer}
 .vi:last-of-type{margin-bottom:0}
@@ -178,18 +183,22 @@ function closeAir(play){
   </div>
 </section>
 
-<section style="padding-top:130px;padding-bottom:130px">
+<section style="padding-top:130px;padding-bottom:130px;text-align:center">
+  <div class="film"><figure class="vi"><video src="v6.mp4" poster="v6.jpg" muted loop playsinline data-v></video></figure></div>
   <p style="font-family:'Nanum Myeongjo',serif;font-size:14px;line-height:2;margin:0;word-break:keep-all">함께 있을 때 가장 나다운 모습이 되고,<br>함께 있을 때 미래를 꿈꾸게 하는<br>사람을 만났습니다.</p>
 </section>
 
 <section style="padding-left:0;padding-right:0;padding-top:0">
   <div class="ed">
-<div class="gp"><img src="g1.jpg" width="640" height="960" alt="" loading="lazy" style="width:54%;transform:rotate(-2deg)"><img src="g2.jpg" width="640" height="960" alt="" loading="lazy" style="width:42%;margin-top:46px;transform:rotate(1.6deg)"></div>
-<div class="gp"><img src="g3.jpg" width="640" height="960" alt="" loading="lazy" style="width:42%;margin-top:44px;transform:rotate(2deg)"><img src="g4.jpg" width="640" height="960" alt="" loading="lazy" style="width:54%;transform:rotate(-1.6deg)"></div>
-<div class="g-ov"><img class="g-big" src="g5.jpg" width="1000" height="1250" alt="" loading="lazy" style="width:94%;margin-left:auto;transform:rotate(1deg)"><img class="g-over" src="g8.jpg" width="520" height="650" alt="" loading="lazy"></div>
-<div class="gp"><img src="g6.jpg" width="640" height="800" alt="" loading="lazy" style="width:50%;transform:rotate(-1.8deg)"><img src="g7.jpg" width="640" height="800" alt="" loading="lazy" style="width:46%;margin-top:40px;transform:rotate(2deg)"></div>
-<img class="g-big" src="g10.jpg" width="1000" height="1500" alt="" loading="lazy" style="width:90%;margin:0 0 48px 4%;transform:rotate(-1deg)">
-<img class="g-solo" src="g9.jpg" width="640" height="960" alt="" loading="lazy">
+<img src="g1.jpg" width="640" height="960" alt="" loading="lazy" style="display:block;height:auto;width:82%;margin:0 auto 0 0;margin-bottom:28px;transform:rotate(-1.6deg)">
+<img src="g2.jpg" width="640" height="960" alt="" loading="lazy" style="display:block;height:auto;width:68%;margin:0 0 0 auto;margin-bottom:52px;transform:rotate(1.8deg)">
+<img src="g3.jpg" width="640" height="960" alt="" loading="lazy" style="display:block;height:auto;width:74%;margin:0 auto 0 0;margin-bottom:40px;transform:rotate(1.4deg)">
+<img src="g4.jpg" width="640" height="960" alt="" loading="lazy" style="display:block;height:auto;width:84%;margin:0 0 0 auto;margin-bottom:56px;transform:rotate(-1.4deg)">
+<div class="g-ov"><img class="g-big" src="g5.jpg" width="1000" height="1250" alt="" loading="lazy" style="width:100%;margin-left:auto;transform:rotate(1deg)"><img class="g-over" src="g8.jpg" width="520" height="650" alt="" loading="lazy"></div>
+<img src="g6.jpg" width="640" height="800" alt="" loading="lazy" style="display:block;height:auto;width:86%;margin:0 auto 0 0;margin-bottom:44px;transform:rotate(-1.6deg)">
+<img src="g7.jpg" width="640" height="800" alt="" loading="lazy" style="display:block;height:auto;width:66%;margin:0 0 0 auto;margin-bottom:56px;transform:rotate(2deg)">
+<img src="g10.jpg" width="1000" height="1500" alt="" loading="lazy" style="display:block;height:auto;width:96%;margin:0 auto 52px 2%;transform:rotate(-1deg)">
+<img src="g9.jpg" width="640" height="960" alt="" loading="lazy" style="display:block;height:auto;width:74%;margin:0 0 0 auto;margin-bottom:0px;transform:rotate(2.2deg)">
 </div>
 </section>
 
