@@ -18,6 +18,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nanum Myeongjo',serif;line-height:1.9;display:flex;justify-content:center}
 main{width:100%;max-width:480px;overflow:hidden}
 section{padding:54px 28px;text-align:center}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-style:normal;text-transform:uppercase;font-size:14px;letter-spacing:.36em;padding-left:.36em;margin-bottom:20px;color:var(--mute)}
 .en{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--mute);letter-spacing:.08em}
 h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spacing:.2em}
 .ph{background:var(--ph);border:1px dashed var(--line);color:var(--mute);display:flex;align-items:center;justify-content:center;font-size:12px;text-align:center;border-radius:2px}
@@ -41,6 +42,8 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 /* letter */
 @font-face{font-family:"Ice Jaram";src:url(IceJaram-sub.ttf) format("truetype");font-display:swap}
 .hand{font-family:'Ice Jaram','Nanum Pen Script',cursive;font-size:clamp(16px,4.6vw,19.6px);line-height:1.5;min-height:10.6em;white-space:pre-line;word-break:keep-all}
+.lk{display:flex;justify-content:center;margin:51px auto 0;transform-origin:50% 0;animation:pend 3.2s ease-in-out infinite alternate;filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))}
+@keyframes pend{from{transform:rotate(-2.4deg)}to{transform:rotate(2.4deg)}}
 .swp{display:flex;justify-content:center;align-items:flex-end;gap:10px;margin:51px auto 0}
 .swp .sway{width:auto;height:190px;margin:0}
 .swp .hh{align-self:center;position:relative;left:18px;color:#d9a3a3;font-size:19px;line-height:1;margin-bottom:24px;animation:hb 1.6s ease-in-out infinite}
@@ -52,7 +55,11 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 .divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:128px auto 0;color:var(--mute);font-size:11px;line-height:1}
 .divider::before,.divider::after{content:"";width:56px;height:1px;background:var(--line)}
 .hand-img{display:none;width:100%;min-height:200px;margin-bottom:12px}
-.parents{margin-top:40px;font-size:14px;line-height:2.1}
+.stg{position:relative;width:238px;height:238px;margin:51px auto 0}
+.stg .sw{position:absolute;display:block;width:auto;filter:drop-shadow(0 5px 8px rgba(0,0,0,.2))}
+.stg .sw:first-child{left:0;top:0;height:206px;transform:rotate(-5deg)}
+.stg .sw.b{left:88px;top:40px;height:196px;transform:rotate(5deg)}
+.parents{margin-top:46px;font-size:14px;line-height:2.1}
 .parents b{font-weight:400;color:var(--mute);display:inline-block;width:3.2em}
 /* media */
 .vid{aspect-ratio:16/9;width:66.7%;margin:0 auto 14px}
@@ -70,10 +77,11 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 .cz-b{position:absolute;top:calc((100% - 26px)/2);transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.82);color:#333;font-size:18px;line-height:34px;padding:0;cursor:pointer;z-index:2;box-shadow:0 1px 6px rgba(0,0,0,.18)}
 .cz-b.p{left:8px}.cz-b.n{right:8px}
 .cz-t{cursor:grab}.cz-t.dg{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
-.cz-t{display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;transition:height .3s ease;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;border-radius:2px}
+.cz-t{display:flex;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:12px;border-radius:2px}
 .cz-t::-webkit-scrollbar{display:none}
-.cz-s{flex:0 0 100%;scroll-snap-align:center;background:var(--ph);overflow:hidden}
-.cz-s img{display:block;width:100%;height:auto}
+.cz-s{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;aspect-ratio:2/3;background:var(--ph);overflow:hidden}
+.cz-s img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.prof{margin:34px 0 30px;font-family:'Nanum Myeongjo',serif;font-size:13px;line-height:1.9;color:var(--mute);word-break:keep-all}.prof>div+div{margin-top:20px}.prof b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
 .cz-d{display:flex;justify-content:center;gap:7px;margin-top:14px}
 .cz-d i{width:5px;height:5px;border-radius:50%;background:#cfc8b6;transition:background .2s,transform .2s}
 .cz-d i.on{background:var(--acc);transform:scale(1.25)}
@@ -93,6 +101,18 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 .map{margin:28px 0 18px}
 .btns{display:flex;gap:8px}
 .btns a,.btn{flex:1;padding:12px 0;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:13px;text-decoration:none;cursor:pointer;border-radius:2px}
+.tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:22px}
+.tabs button{flex:1;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:12px 0 11px;font:400 14px 'Nanum Myeongjo',serif;color:#b3aca0;cursor:pointer;letter-spacing:.04em}
+.tabs button.on{color:var(--ink);border-bottom-color:#b9a98f}
+.panels{display:grid}
+.pn{grid-area:1/1;visibility:hidden;opacity:0;transition:opacity .25s}
+.pn.on{visibility:visible;opacity:1}
+.pn p:last-child{margin-bottom:0}
+.tabbed{margin-top:0}
+.tp{display:block;width:100%;height:auto;aspect-ratio:1128/521;object-fit:cover;margin:0 0 22px}
+.bl{padding-left:1.05em;text-indent:-1.05em;margin:0 0 14px;word-break:keep-all}
+.bl .sm{color:#9a9285;font-size:12px}
+.nt{margin:34px 0 0;padding-top:28px;border-top:1px solid var(--line);text-align:left;color:var(--ink);font-size:13px;line-height:1.9;text-indent:0}
 .way{margin-top:28px;font-size:13px;color:var(--mute);text-align:left;line-height:1.8}
 .way p{margin:0 0 16px;word-break:keep-all}.way b{color:var(--ink);font-weight:500}
 /* account */
@@ -150,10 +170,14 @@ body.wait .hero *,body.wait .hero *::before,body.wait .hero *::after{animation-p
 /* video items */
 
 /* video frame */
-.film{position:relative;width:76%;margin:0 auto 40px;overflow:hidden;border-radius:2px;box-shadow:0 14px 28px -16px rgba(0,0,0,.5)}
+.film{position:relative;width:76%;margin:6px auto 44px;padding:9px;background:#fff;box-shadow:0 3px 14px rgba(0,0,0,.16);transform:rotate(1.2deg)}
+.film .fi{position:relative;overflow:hidden}
+.film::before,.film::after{content:"";position:absolute;z-index:4;width:76px;height:24px;background:rgba(236,222,172,.78);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.film::before{top:-9px;left:-20px;transform:rotate(-35deg)}
+.film::after{bottom:-9px;right:-20px;transform:rotate(-35deg)}
 .film .vi{width:100%!important;margin:0!important}
-.film .vi video{aspect-ratio:3/2;border-radius:0}
-.film::before{content:"";position:absolute;left:0;right:0;bottom:0;height:62%;z-index:1;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.34),rgba(0,0,0,0))}
+.film .vi video{aspect-ratio:3/2;border-radius:0;filter:grayscale(1);transform:scale(1.17)}
+.film .vi{overflow:hidden}
 .film .cap{position:absolute;left:0;right:0;bottom:7%;z-index:3;text-align:center;color:#fff;pointer-events:none;text-shadow:0 1px 6px rgba(0,0,0,.5)}
 .film .cap .d{font-family:'Nanum Myeongjo',serif;font-size:clamp(11px,3.3vw,14px);letter-spacing:.14em;line-height:1.5}
 .film .cap .i{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(10px,3vw,12.5px);line-height:1.5;margin-top:3px}
@@ -202,10 +226,12 @@ function closeAir(play){
 </section>
 
 <section style="padding-top:96px">
-  <h2>초대합니다</h2>
+  <div class="eyebrow">Invitation</div>
+  <h2>소중한 분들을 초대합니다</h2>
   <div class="ph hand-img" id="handImg">손글씨 문구 이미지 자리</div>
   <div class="hand" id="hand" data-text="앞으로 함께 나아갈 수많은 계절&#10;언제나 평생의 친구이자&#10;서로에게 유일한 사람으로 머물겠습니다.&#10;&#10;하나 되어 맞이하는 두 사람의 첫 시작&#10;그 시작의 자리에 소중한 걸음으로&#10;축복해주시면 감사하겠습니다."></div>
-  <div class="swp"><img class="sway" src="st-groom.png" width="292" height="560" alt="" loading="lazy"><span class="hh" aria-hidden="true">♥</span><img class="sway b" src="st-bride.png" width="407" height="560" alt="" loading="lazy"></div>
+  
+  <div class="stg"><img class="sw" src="st2-groom.png" width="281" height="560" alt="" loading="lazy"><img class="sw b" src="st2-bride.png" width="402" height="560" alt="" loading="lazy"></div>
   <div class="parents">
     <div><b>신랑</b> 장용중 · 최영 의 아들 <span style="color:var(--ink)">준협</span></div>
     <div><b>신부</b> 권진아 의 딸 <span style="color:var(--ink)">나은</span></div>
@@ -213,26 +239,17 @@ function closeAir(play){
 </section>
 
 <section>
-  <div class="en" style="font-size:14px;margin-bottom:22px">Our Love Story</div>
-  <div class="film"><figure class="vi"><video src="v6.mp4" poster="v6.jpg" muted loop playsinline data-v></video></figure><div class="cap"><div class="d">2027.04.10</div><div class="i">We invite you to celebrate the marriage of</div></div></div>
+  <div class="eyebrow">Our Love Story</div>
+  <div class="film"><div class="fi"><figure class="vi"><video src="v7.mp4" poster="v6.jpg" muted loop playsinline data-v></video></figure></div></div>
+  <div class="prof"><div><b>신랑 장준협</b>1996.04.06 A형 ENFJ<br>성실하고 책임감 있는 성격<br>친해지면 재밌는 분위기 메이커<br>(A형이라 잘 삐져요...)</div><div><b>신부 박나은</b>1995.12.22 O형 ESFJ<br>밝고 웃음이 많은 성격 (말도 많아요...)<br>생활력 강한 K-장녀</div></div>
   <p style="font-family:'Nanum Myeongjo',serif;font-size:14px;line-height:2;margin:0;word-break:keep-all">함께 있을 때 가장 나다운 모습이 되고,<br>함께 있을 때 미래를 꿈꾸게 하는<br>사람을 만났습니다.<br><br>늘 서로 존중하며,<br>지금처럼 재미있고 행복하게 살겠습니다.</p>
 </section>
 
 <section style="padding-left:0;padding-right:0">
-  <div class="en" style="font-size:14px;margin-bottom:22px">Our Wedding Gallery</div>
+  <div class="eyebrow">Our Wedding Gallery</div>
   <div class="ed">
-<div class="cz" data-cz><div class="cz-t"><div class="cz-s"><img src="g1.jpg" width="640" height="960" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g4.jpg" width="640" height="960" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g5.jpg" width="1000" height="1250" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g7.jpg" width="640" height="800" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g10.jpg" width="1000" height="1500" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g12.jpg" width="900" height="1349" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g14.jpg" width="900" height="1349" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g15.jpg" width="900" height="1349" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g17.jpg" width="900" height="1350" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g18.jpg" width="900" height="1350" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g20.jpg" width="900" height="1350" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g21.jpg" width="900" height="1125" alt="" loading="lazy" draggable="false"></div></div><div class="cz-d"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="cz" data-cz><div class="cz-t"><div class="cz-s"><img src="g1.jpg" width="640" height="960" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g4.jpg" width="640" height="960" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g5.jpg" width="1000" height="1250" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g7.jpg" width="640" height="800" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g10.jpg" width="1000" height="1500" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g12.jpg" width="900" height="1349" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g14.jpg" width="900" height="1349" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g15.jpg" width="900" height="1349" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g17.jpg" width="900" height="1350" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g18.jpg" width="900" height="1350" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g20.jpg" width="900" height="1350" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g21.jpg" width="900" height="1125" alt="" loading="lazy" draggable="false"></div><div class="cz-s"><img src="g22.jpg" width="900" height="1349" alt="" loading="lazy" draggable="false"></div></div><div class="cz-d"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 </div>
-</section>
-
-<section>
-  <div class="en" style="font-size:14px;margin-bottom:18px">Guest book</div>
-  <p style="font-size:14px;margin:0">식 당일 예식장에 방명록 액자가 마련되어 있어요.<br>저희를 위한 따뜻한 한마디를 남겨 주시면<br>오래도록 간직하겠습니다. 감사합니다.</p>
-</section>
-
-<section>
-  <div class="en" style="font-size:14px;margin-bottom:18px">Dinner</div>
-  <p style="font-size:14px;margin:0">하객분들은 3층 연회장을 이용하시면 됩니다.<br>하객식사는 식전 30분부터 2시간 가능합니다.<br><br>맛있게, 든든하게 드시고 가세요.</p>
 </section>
 
 <section style="padding-bottom:0">
@@ -253,9 +270,10 @@ function closeAir(play){
 </section>
 
 <section>
+  <div class="eyebrow">Location</div>
   <h2>오시는 길</h2>
-  <div class="en" style="font-family:'Nanum Myeongjo',serif;font-style:normal;letter-spacing:0;font-size:17px">영등포 더 컨벤션</div>
-  <div style="font-size:13px;color:var(--mute)">서울 영등포구 국회대로38길 2 (당산동3가 93-2)</div>
+  <div style="font-family:'Nanum Myeongjo',serif;font-weight:700;font-size:16px;color:#5c5448;margin-top:26px;letter-spacing:.02em">더컨벤션 영등포 2F 다이너스티홀</div>
+  <div style="font-size:13px;color:var(--mute);margin-top:12px"><svg width="13" height="16" viewBox="0 0 13 16" style="vertical-align:-2px;margin-right:6px" aria-hidden="true"><path d="M6.5 0C3 0 .3 2.7.3 6.1c0 4.3 6.2 9.9 6.2 9.9s6.2-5.6 6.2-9.9C12.7 2.7 10 0 6.5 0zm0 8.6a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="currentColor"/></svg>서울 영등포구 국회대로38길 2 (당산동3가 93-2)</div>
   <a class="map" id="mapBox" href="#" target="_blank" rel="noopener" style="display:block;overflow:hidden;border:1px solid var(--line);border-radius:2px"><img src="map.jpg" width="1200" height="736" alt="더컨벤션 영등포 위치 지도" style="width:100%;height:auto;display:block"></a>
   <div class="btns">
     <a id="lnkN" href="#" target="_blank" rel="noopener">네이버 지도</a>
@@ -265,8 +283,18 @@ function closeAir(play){
   <div class="way">
     <p><b>지하철</b><br>2, 5호선 영등포구청역 4번 출구 도보 5분 (영등포 경찰서 방면)</p>
     <p><b>버스</b><br>70-3, 5620, 6631, 6637, 영등포02, 영등포12</p>
-    <p><b>자가용(주차)</b><br>내비게이션 [더컨벤션 영등포] 검색<span style="display:block;height:12px"></span><span style="display:block;padding-left:1.35em;text-indent:-1.35em">1. 더컨벤션 맞은편 당산 공영주차장 (주차요원 안내)</span><span style="display:block;padding-left:1.35em">2시간 무료 주차가능, 초과시 5분당 400원 추가요금 발생</span><span style="display:block;height:12px"></span><span style="display:block;padding-left:1.35em;text-indent:-1.35em">2. 더컨벤션 도보7분거리 삼성생명 건물주차장(주소 : 서울 영등포구 국회대로 559)</span><span style="display:block;padding-left:1.35em">2시간 무료 주차가능, 초과시 10분당 1000원 추가요금 발생</span><span style="display:block;height:14px"></span>★2시간 무료주차권은 식사하시는 연회장 입구 안내데스크에서 발행하여 드립니다.</p>
-    <p style="margin:44px 0 0;padding-top:30px;border-top:1px solid var(--line);text-align:center;color:var(--ink);font-size:13px;line-height:1.9">식 당일에는 도로가 막히고 주차장이 혼잡할 수 있어요.<br>양해 부탁드리며, 조금 여유 있게<br>일찍 도착해 주시면 감사하겠습니다.</p>
+    <p style="margin-bottom:0"><b>차량</b><br>내비게이션 [더컨벤션 영등포] 검색</p>
+  </div>
+</section>
+
+<section>
+  <div class="way tabbed">
+    <div class="tabs" role="tablist"><button type="button" class="on" data-tab="0">주차안내</button><button type="button" data-tab="1">시설안내</button><button type="button" data-tab="2">식사안내</button></div>
+    <div class="panels">
+      <div class="pn on"><img class="tp" src="tab1.jpg" width="900" height="416" alt="" loading="lazy"><div class="bl">· 더컨벤션 건물엔 주차가 어려운 점 양해 부탁드립니다.</div><div class="bl">· 더컨벤션 맞은편 당산 공영주차장 (주차요원 안내)<br>2시간 무료 주차가능, 초과시 추가요금 발생합니다.</div><div class="bl">· 더컨벤션 도보7분거리 삼성생명 건물주차장<br>2시간 무료 주차가능, 초과시 추가요금 발생합니다.<br><span class="sm">(삼성생명 주소 : 서울 영등포구 국회대로 559)</span></div><div class="bl">· 2시간 무료주차권은 식사하시는 연회장 입구 안내데스크에서 발행하여 드립니다.</div><p class="nt">식 당일에는 도로가 막히고 주차장이 혼잡할 수 있어요.<br>양해 부탁드리며, 조금 여유 있게 일찍 도착해 주시면 감사하겠습니다.</p></div>
+      <div class="pn"><img class="tp" src="tab2.jpg" width="900" height="416" alt="" loading="lazy"><div class="bl">· 더컨벤션 영등포 건물 1층에 ATM기기가 있습니다.</div><div class="bl">· 다이너스티홀은 2층입니다. 계단 또는 엘리베이터 이용해주세요.</div><div class="bl">· 신부대기실은 2층 로비 제일 안쪽에 있습니다. 사진 찍으러 와주세요 : )</div><div class="bl">· 포토테이블에 방명록 액자가 마련되어 있어요. 저희를 위한 따뜻한 한마디를 남겨 주시면 오래도록 간직하겠습니다.</div></div>
+      <div class="pn"><img class="tp" src="tab3.jpg" width="900" height="416" alt="" loading="lazy"><div class="bl">· 저희 하객분들은 3층 연회장을 이용하시면 됩니다.</div><div class="bl">· 하객식사는 식전 30분부터 2시간 이용 가능합니다.</div><div class="bl">· 맛있게, 든든하게 드시고 가세요 : ) ♥</div></div>
+    </div>
   </div>
 </section>
 
@@ -276,7 +304,8 @@ function closeAir(play){
   <details><summary>신랑 측 계좌번호</summary>
     <div class="acc"><span>카카오뱅크 3333069711744<br><small style="color:var(--mute)">예금주 장준협</small></span><button class="btn" data-copy="3333069711744">복사</button></div></details>
   <details><summary>신부 측 계좌번호</summary>
-    <div class="acc"><span>신한은행 110413406951<br><small style="color:var(--mute)">예금주 박나은</small></span><button class="btn" data-copy="110413406951">복사</button></div></details>
+    <div class="acc"><span>신한은행 110413406951<br><small style="color:var(--mute)">신부 · 예금주 박나은</small></span><button class="btn" data-copy="110413406951">복사</button></div>
+    <div class="acc"><span>농협 3010380848091<br><small style="color:var(--mute)">신부 모 · 예금주 권진아</small></span><button class="btn" data-copy="3010380848091">복사</button></div></details>
 </section>
 
 <section style="padding-bottom:64px">
@@ -371,9 +400,7 @@ var SHARE_URL=location.href.split("#")[0]; // 청첩장 주소(바뀌면 여기�
 (function(){document.querySelectorAll('[data-cz]').forEach(function(c){var t=c.querySelector('.cz-t'),d=c.querySelectorAll('.cz-d i'),n=d.length;
 function w(){return t.clientWidth+12}
 function idx(){return Math.round(t.scrollLeft/w())}
-function fit(){var sl=t.children[idx()];if(sl&&sl.offsetHeight)t.style.height=sl.offsetHeight+'px'}
-function up(){var i=idx();d.forEach(function(x,k){x.classList.toggle('on',k===i)});fit()}
-window.addEventListener('resize',fit);window.addEventListener('load',fit);t.querySelectorAll('img').forEach(function(m){m.addEventListener('load',fit)});
+function up(){var i=idx();d.forEach(function(x,k){x.classList.toggle('on',k===i)})}
 function go(i){t.scrollTo({left:Math.max(0,Math.min(n-1,i))*w(),behavior:'smooth'})}
 ['p','n'].forEach(function(k){var b=document.createElement('button');b.type='button';b.className='cz-b '+k;b.setAttribute('aria-label',k==='p'?'이전':'다음');b.textContent=k==='p'?'‹':'›';b.onclick=function(){go(idx()+(k==='p'?-1:1))};c.appendChild(b)});
 t.addEventListener('scroll',up,{passive:true});up();
@@ -382,6 +409,10 @@ t.addEventListener('mousedown',function(e){down=true;moved=false;sx=e.pageX;sl=t
 window.addEventListener('mousemove',function(e){if(!down)return;var dx=e.pageX-sx;if(Math.abs(dx)>3)moved=true;t.scrollLeft=sl-dx});
 window.addEventListener('mouseup',function(){if(!down)return;down=false;t.classList.remove('dg');var i=Math.round(t.scrollLeft/w());go(i)});
 });})();
+</script>
+<script>
+(function(){var w=document.querySelector('.tabbed');if(!w)return;var b=w.querySelectorAll('.tabs button'),p=w.querySelectorAll('.pn');
+b.forEach(function(x,i){x.addEventListener('click',function(){b.forEach(function(y,k){y.classList.toggle('on',k===i)});p.forEach(function(y,k){y.classList.toggle('on',k===i)})})});})();
 </script>
 </body>
 </html>
