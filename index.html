@@ -11,7 +11,7 @@
 <title>준협♥나은 결혼합니다</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Nanum+Myeongjo:wght@400;700&family=Ms+Madi&display=swap">
 <style>
-:root{--bg:#fbf9f3;--ink:#1c2024;--mute:#7b7566;--line:#e6e0d0;--ph:#efeadd;--acc:#55695d;--card:#fffdf9;
+:root{--bg:#eef1ea;--ink:#1c2024;--mute:#7b7566;--line:#d8ded0;--ph:#efeadd;--acc:#55695d;--card:#fffdf9;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
@@ -41,6 +41,10 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 /* letter */
 @font-face{font-family:"Ice Jaram";src:url(IceJaram-sub.ttf) format("truetype");font-display:swap}
+.hw{position:relative;width:76%;margin:0 auto 12px;aspect-ratio:1000/692}.hw img{position:absolute;inset:0;width:100%;height:100%;display:block;user-select:none}.hw img[data-k]{transform:translateX(calc(var(--x)*1%))}
+.hw.go img[data-k]{animation:wr 1.5s linear forwards;animation-delay:calc(var(--k)*1.55s)}
+@keyframes wr{to{clip-path:inset(var(--t) 0 var(--b) 0)}}
+@media (prefers-reduced-motion:reduce){.hw img[data-k]{clip-path:inset(0)!important;animation:none!important}}
 .hand{font-family:'Ice Jaram','Nanum Pen Script',cursive;font-size:clamp(16px,4.6vw,19.6px);line-height:1.5;min-height:10.6em;white-space:pre-line;word-break:keep-all}
 .lk{display:flex;justify-content:center;margin:51px auto 0;transform-origin:50% 0;animation:pend 3.2s ease-in-out infinite alternate;filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))}
 @keyframes pend{from{transform:rotate(-2.4deg)}to{transform:rotate(2.4deg)}}
@@ -59,7 +63,7 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 .stg .sw{position:absolute;display:block;width:auto;filter:drop-shadow(0 5px 8px rgba(0,0,0,.2))}
 .stg .sw:first-child{left:0;top:0;height:206px;transform:rotate(-5deg)}
 .stg .sw.b{left:88px;top:40px;height:196px;transform:rotate(5deg)}
-.parents{margin-top:46px;font-size:14px;line-height:2.1}
+.parents{margin-top:46px;font-size:15.5px;line-height:2.1}
 .parents b{font-weight:400;color:var(--mute);display:inline-block;width:3.2em}
 /* media */
 .vid{aspect-ratio:16/9;width:66.7%;margin:0 auto 14px}
@@ -81,7 +85,7 @@ h2{font-weight:700;font-size:15px;margin:0 0 36px;color:var(--mute);letter-spaci
 .cz-t::-webkit-scrollbar{display:none}
 .cz-s{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;aspect-ratio:2/3;background:var(--ph);overflow:hidden}
 .cz-s img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
-.prof{margin:34px 0 30px;font-family:'Nanum Myeongjo',serif;font-size:13px;line-height:1.9;color:var(--mute);word-break:keep-all}.prof>div+div{margin-top:20px}.prof b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px;letter-spacing:.04em}
+.prof{margin:34px 0 30px;font-family:'Nanum Myeongjo',serif;font-size:13.5px;line-height:1.9;color:var(--mute);word-break:keep-all}.prof>div+div{margin-top:20px}.prof b{display:block;font-size:15.5px;color:#3a5a45;margin-bottom:4px;letter-spacing:.04em}
 .cz-d{display:flex;justify-content:center;gap:7px;margin-top:14px}
 .cz-d i{width:5px;height:5px;border-radius:50%;background:#cfc8b6;transition:background .2s,transform .2s}
 .cz-d i.on{background:var(--acc);transform:scale(1.25)}
@@ -228,8 +232,7 @@ function closeAir(play){
 <section style="padding-top:96px">
   <div class="eyebrow">Invitation</div>
   <h2>소중한 분들을 초대합니다</h2>
-  <div class="ph hand-img" id="handImg">손글씨 문구 이미지 자리</div>
-  <div class="hand" id="hand" data-text="앞으로 함께 나아갈 수많은 계절&#10;언제나 평생의 친구이자&#10;서로에게 유일한 사람으로 머물겠습니다.&#10;&#10;하나 되어 맞이하는 두 사람의 첫 시작&#10;그 시작의 자리에 소중한 걸음으로&#10;축복해주시면 감사하겠습니다."></div>
+  <div class="hw" id="hand" role="img" aria-label="앞으로 함께 나아갈 수많은 계절 언제나 평생의 친구이자 서로에게 유일한 사람으로 머물겠습니다. 하나 되어 맞이하는 두 사람의 첫 시작 그 시작의 자리에 소중한 걸음으로 축복해주시면 감사하겠습니다."><img class="base" src="hand.png" width="1000" height="692" alt="" style="visibility:hidden" draggable="false"><img src="hand.png" alt="" style="--x:6.05;--k:0;--t:0.0%;--b:84.39%;clip-path:inset(0.0% 100% 84.39% 0)" data-k="0" draggable="false"><img src="hand.png" alt="" style="--x:3.9;--k:1;--t:15.61%;--b:70.25%;clip-path:inset(15.61% 100% 70.25% 0)" data-k="1" draggable="false"><img src="hand.png" alt="" style="--x:0.25;--k:2;--t:29.75%;--b:50.57%;clip-path:inset(29.75% 100% 50.57% 0)" data-k="2" draggable="false"><img src="hand.png" alt="" style="--x:1.75;--k:3;--t:49.43%;--b:31.59%;clip-path:inset(49.43% 100% 31.59% 0)" data-k="3" draggable="false"><img src="hand.png" alt="" style="--x:1.55;--k:4;--t:68.41%;--b:17.71%;clip-path:inset(68.41% 100% 17.71% 0)" data-k="4" draggable="false"><img src="hand.png" alt="" style="--x:1.2;--k:5;--t:82.29%;--b:0.0%;clip-path:inset(82.29% 100% 0.0% 0)" data-k="5" draggable="false"></div>
   
   <div class="stg"><img class="sw" src="st2-groom.png" width="281" height="560" alt="" loading="lazy"><img class="sw b" src="st2-bride.png" width="402" height="560" alt="" loading="lazy"></div>
   <div class="parents">
@@ -239,10 +242,10 @@ function closeAir(play){
 </section>
 
 <section>
-  <div class="eyebrow">Our Love Story</div>
+  <div class="eyebrow" style="margin-bottom:38px">Our Love Story</div>
   <div class="film"><div class="fi"><figure class="vi"><video src="v7.mp4" poster="v6.jpg" muted loop playsinline data-v></video></figure></div></div>
-  <div class="prof"><div><b>신랑 장준협</b>1996.04.06 A형 ENFJ<br>성실하고 책임감 있는 성격<br>친해지면 재밌는 분위기 메이커<br>(A형이라 잘 삐져요...)</div><div><b>신부 박나은</b>1995.12.22 O형 ESFJ<br>밝고 웃음이 많은 성격 (말도 많아요...)<br>생활력 강한 K-장녀</div></div>
-  <p style="font-family:'Nanum Myeongjo',serif;font-size:14px;line-height:2;margin:0;word-break:keep-all">함께 있을 때 가장 나다운 모습이 되고,<br>함께 있을 때 미래를 꿈꾸게 하는<br>사람을 만났습니다.<br><br>늘 서로 존중하며,<br>지금처럼 재미있고 행복하게 살겠습니다.</p>
+  <div class="prof"><div><b>신랑 장준협</b>1996.04.06 A형 ENFJ<br>성실하고 책임감 있는 성격<br>친해지면 재밌는 분위기 메이커</div><div><b>신부 박나은</b>1995.12.22 O형 ESFJ<br>웃음이 많고 정이 많아요<br>생활력 강한 K-장녀</div></div>
+  <p style="font-family:'Nanum Myeongjo',serif;font-size:14.5px;line-height:2;margin:0;word-break:keep-all">함께 있을 때 가장 나다운 모습이 되고,<br>함께 있을 때 미래를 꿈꾸게 하는<br>사람을 만났습니다.<br><br>늘 서로 존중하며,<br>지금처럼 재미있고 행복하게 살겠습니다.</p>
 </section>
 
 <section style="padding-left:0;padding-right:0">
@@ -348,11 +351,8 @@ var SHARE_URL=location.href.split("#")[0]; // 청첩장 주소(바뀌면 여기�
   }
   tick();setInterval(tick,1000);
   // 손글씨 문구: 한 글자씩 등장
-  var el=document.getElementById("hand"),txt=el.getAttribute("data-text"),started=false;
-  function type(){if(started)return;started=true;
-    if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.textContent=txt;return}
-    var i=0;(function n(){el.textContent=txt.slice(0,++i);if(i<txt.length)setTimeout(n,35)})()}
-  if("IntersectionObserver" in window){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){type();o.disconnect()}},{threshold:.5}).observe(el)}else type();
+  var el=document.getElementById("hand");
+  if("IntersectionObserver" in window){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){el.classList.add("go");o.disconnect()}},{threshold:.4}).observe(el)}else el.classList.add("go");
   // 계좌 복사
   document.querySelectorAll("[data-copy]").forEach(function(b){b.onclick=function(){
     var v=b.getAttribute("data-copy");
